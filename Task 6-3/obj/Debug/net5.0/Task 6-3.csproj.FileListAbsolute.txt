@@ -1,0 +1,15 @@
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\Task 6-3.exe
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\Task 6-3.deps.json
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\Task 6-3.runtimeconfig.json
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\Task 6-3.runtimeconfig.dev.json
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\Task 6-3.dll
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\ref\Task 6-3.dll
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\bin\Debug\net5.0\Task 6-3.pdb
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.AssemblyInfoInputs.cache
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.AssemblyInfo.cs
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.csproj.CoreCompileInputs.cache
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.dll
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\ref\Task 6-3.dll
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.pdb
+C:\Users\3213897\Source\Repos\NewR\Task 6-3\obj\Debug\net5.0\Task 6-3.genruntimeconfig.cache
