@@ -9,6 +9,8 @@ namespace FileWorks
   
     class Program
     {
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Введите путь:");
@@ -25,6 +27,7 @@ namespace FileWorks
             //Поиск файлов удовлетворяющих маске и диапазону дат и запись в лог файл
             for (int i = 0; files.Length > i; i++)
             {
+                //Поиск файлов удовлетворяющих требованиям и запись в лог файл информации 
                 string str = Path.GetFileName(files[i]);
                 FileStream fs = new FileStream("log.txt", FileMode.Append);
                 StreamWriter sw = new StreamWriter(fs);
@@ -33,6 +36,9 @@ namespace FileWorks
 
                     sw.WriteLine(str + " Was created" + lastChange + ",");
                 sw.Close();
+             
+
+
             }
 
             

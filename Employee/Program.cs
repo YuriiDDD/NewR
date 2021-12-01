@@ -21,7 +21,7 @@ namespace Employee
                 {
                     case ConsoleKey.UpArrow: choose--; break;
                     case ConsoleKey.DownArrow: choose++; break;
-                    case ConsoleKey.D: Console.CursorVisible = true; return -1;
+                
                     case ConsoleKey.Enter: Console.CursorVisible = true; return choose;
                 }
                 choose = (choose + points.Length) % points.Length; // Зацикливаем выбор.

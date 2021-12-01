@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\3213897\\Source\\Repos\\NewR\\FileWorks\\FileWorks.csproj",
-      "projectName": "FileWorks",
-      "projectPath": "C:\\Users\\3213897\\Source\\Repos\\NewR\\FileWorks\\FileWorks.csproj",
+      "projectUniqueName": "C:\\Users\\3213897\\Source\\Repos\\NewR\\FileWorks\\Task 6-1.csproj",
+      "projectName": "Task 6-1",
+      "projectPath": "C:\\Users\\3213897\\Source\\Repos\\NewR\\FileWorks\\Task 6-1.csproj",
       "packagesPath": "C:\\Users\\3213897\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\3213897\\Source\\Repos\\NewR\\FileWorks\\obj\\",
       "projectStyle": "PackageReference",
