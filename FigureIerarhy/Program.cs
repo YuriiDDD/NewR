@@ -2,70 +2,25 @@
 
 namespace FigureIerarhy
 {
-    class Triangle : ClosedFigure
-    {
-       
-
-        public Triangle(string name, Point [] points) : base(name, points)
-        {
-          
-        }
-        // Calculate the perimeter
-        public override double Perimetr()
-        {
-            return Math.Sqrt(Math.Pow(Points[0].X - Points[1].X, 2) + Math.Pow(Points[0].Y - Points[1].Y, 2)) +
-            Math.Sqrt(Math.Pow(Points[1].X - Points[2].X, 2) + Math.Pow(Points[1].Y - Points[2].Y, 2)) +
-            Math.Sqrt(Math.Pow(Points[0].X - Points[2].X, 2) + Math.Pow(Points[0].Y - Points[2].Y, 2));
-
-        }
-        //Calculate the Square
-        public override double Square()
-        {
-            double P2 = this.Perimetr() / 2;
-            double S = Math.Sqrt((P2*(P2- Math.Sqrt(Math.Pow(Points[0].X - Points[1].X, 2) + Math.Pow(Points[0].Y - Points[1].Y, 2))) 
-                * (P2- Math.Sqrt(Math.Pow(Points[1].X - Points[2].X, 2) + Math.Pow(Points[1].Y - Points[2].Y, 2))) 
-                *(P2- Math.Sqrt(Math.Pow(Points[0].X - Points[2].X, 2) + Math.Pow(Points[0].Y - Points[2].Y, 2))))) ;
-
-
-            return S;
-
-        }
-        public override void Draw()
-        {
-            int i = 1;
-            while (i <= 5)
-            {
-                int k = 5;
-                int h = 1;
-
-                Console.WriteLine("");
-                while (k > i)
-                {
-                    Console.Write(" ");
-                    k--;
-                }
-                while (h <= i)
-                {
-                    Console.Write("**");
-                    h++;
-                }
-                i++;
-            }
-
-
-        }
-    }
+   
 
     class Program
     {
         static void Main(string[] args)
         {
-            Point[] dotinfo = new Point[3];
-            Triangle myTriangle = new Triangle("Triangle", dotinfo);
-            myTriangle.AddPoint(0, "A", 10, 10);
-            myTriangle.AddPoint(1, "B", 20, 20);
-            myTriangle.AddPoint(2, "C", 30, 10);
-            myTriangle.Draw();
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Point[] points = new Point[4];
+            points[0] = new Point("a", 1,  1);
+            points[1] = new Point("b", 1, 10);
+            points[2] = new Point("с", 6, 10);
+            points[3] = new Point("d", 6, 1);
+
+
+          //    Line MyLine = new Line(points[0], points[2], "");
+            //  MyLine.Draw("*");
+            PolyLine MyPolyFigure = new PolyLine(points,"");
+            MyPolyFigure.Draw();
+          //  Console.WriteLine(MyLine.Length());
             Console.ReadKey();
 
         }
