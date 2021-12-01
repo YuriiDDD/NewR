@@ -13,8 +13,7 @@ namespace FigureIerarhy
        
         public PolyLine(Point[] points,string name)
           => (Points, Name) = (points, name= string.Concat(points.Select(x=>x.DotName))) ;
-
-       
+  
        
 
         virtual public double Perimetr()

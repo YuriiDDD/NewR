@@ -38,8 +38,8 @@ namespace FigureIerarhy
         virtual public void Draw(string kirpichik)
         {
 
-            int start; 
-            int finish;
+            int start = PointA.Y; 
+            int finish = PointB.Y; 
             
             //If vertical line
             if (PointA.Y == PointB.Y)
@@ -60,8 +60,6 @@ namespace FigureIerarhy
             //All other lines
             else
             {
-            start = PointA.Y;
-            finish = PointB.Y;
                 //Если точки заданы в другом порядке меняю местами
                 if (start > finish)
                 {
