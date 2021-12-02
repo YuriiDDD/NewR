@@ -13,7 +13,20 @@ namespace FigureIerarhy
         public string DotName { get; init; }
         public int X {get; init; }
         public int Y { get; init; }
-       
+         public void Draw(string s)
+        {
+            try
+            {
+                Console.SetCursorPosition(X,Y);
+                Console.Write(s);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+            }
+        }
+
 
     }
 }

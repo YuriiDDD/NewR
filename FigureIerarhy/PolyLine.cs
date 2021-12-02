@@ -10,11 +10,16 @@ namespace FigureIerarhy
     {
         public string Name { get; init; }
         public Point[] Points { get; init; }
-       
-        public PolyLine(Point[] points,string name)
-          => (Points, Name) = (points, name= string.Concat(points.Select(x=>x.DotName))) ;
-  
-       
+
+        private Line [] lines;
+        public PolyLine(Point[] points, string name)
+        {
+            Points = points;
+            name = string.Concat(points.Select(x => x.DotName));
+            Name = name;
+            lines = new Line[points.Length];
+            lines = CalculateLines();
+        }
 
         virtual public double Perimetr()
         {
@@ -26,18 +31,25 @@ namespace FigureIerarhy
         {
             return 0;
         }
+
+        private Line [] CalculateLines()
+        {
+            for (int i = 0; i <= Points.Length - 2; i++)
+            {
+                lines[i] = new Line (Points[i],Points[i+1],"");
+            }
+            lines[Points.Length-1] = new Line(Points[0], Points[Points.Length - 1], "");
+                return lines;
+        }
         public void Draw()
         {
-            Line MyLine;
-            //Рисую все линии кроме последней
-            for (int i=0;i<=Points.Length-2; i++)
-            {
-                MyLine = new Line(Points[i], Points[i + 1], "");
-                MyLine.Draw("*");
-            }
-            ////Connect first and last dots
-            MyLine = new Line(Points[0], Points[Points.Length-1], "");
-            MyLine.Draw("*");
+
+            foreach (Line L in lines)
+                L.Draw("*");
+           
+            
+            
+            
 
 
 

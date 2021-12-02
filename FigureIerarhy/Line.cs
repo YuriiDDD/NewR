@@ -12,72 +12,93 @@ namespace FigureIerarhy
         public Point PointA { get; init; }
         public Point PointB { get; init; }
 
+        private Point[] points;
+
+        private bool isVertical()
+        { 
+           bool result = false;
+            if ( PointA.Y == PointB.Y) return true; ;
+            return result;
+        }
+        private bool isGorisontal()
+        {
+            bool result = false;
+            if (PointA.X == PointB.X) return true;
+            return result;
+        }
+
         public Line(Point pointA, Point  pointB, string name)
           => (PointA, PointB,Name) = (pointA, pointB, name = pointA.DotName + pointB.DotName);
 
-      
-
-        protected static void WriteAt(string s, int x, int y)
+        public void Draw(string e)
         {
-            try
+            foreach (Point dot in CalculateDots())
             {
-                Console.SetCursorPosition(x, y);
-                Console.Write(s);
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.Clear();
-                Console.WriteLine(e.Message);
+                dot.Draw(e);
             }
         }
-        virtual public double Length()
+       
+        public double Length()
         {
            return Math.Sqrt(Math.Pow(PointA.X - PointB.X, 2) + Math.Pow(PointA.Y - PointB.Y, 2)); ;
         }
        
-        virtual public void Draw(string kirpichik)
+        private Point [] CalculateDots()
         {
 
-            int start = PointA.Y; 
-            int finish = PointB.Y; 
+            // Инициализация с расчетом размера массива
+            points = new Point[Math.Max( Math.Abs(PointA.X-PointB.X), Math.Abs(PointA.Y - PointB.Y))+1];
+            int w = 0;
+
             
-            //If vertical line
-            if (PointA.Y == PointB.Y)
+            if (isGorisontal())
             {
-                start = PointA.X;
-                finish = PointB.X;
-                //Если точки заданы в другом порядке меняю местами
-                if (start > finish)
+                for (int y = Math.Min(PointA.Y, PointB.Y); y <= Math.Max(PointA.Y, PointB.Y); y++)
                 {
-                    start = PointB.X;
-                    finish = PointA.X;
+                    points[w] = new Point("",PointA.X,y);
+                    w++;
                 }
-                for (int x = start; x <= finish; x++)
-                    //    Console.WriteLine(((int)Math.Round((double)(-y * (PointB.X - PointA.X) - (PointA.X * PointB.Y - PointB.X * PointA.Y)) / (PointA.Y - PointB.Y))));
-                    WriteAt(kirpichik, ((int)Math.Round((double)(-x * (PointA.Y - PointB.Y) - (PointA.X * PointB.Y - PointB.X * PointA.Y)) / (PointB.X - PointA.X))),x);
-
+                return points;
             }
-            //All other lines
-            else
+            if (isVertical())
             {
-                //Если точки заданы в другом порядке меняю местами
-                if (start > finish)
+                for (int x = Math.Min(PointA.X, PointB.X); x <= Math.Max(PointA.X, PointB.X); x++)
                 {
-                    start = PointB.Y;
-                    finish = PointA.Y;
+                    points[w] = new Point("", x, PointA.Y);
+                    w++;
                 }
-                for (int y = start; y <= finish; y++)
-                    //    Console.WriteLine(((int)Math.Round((double)(-y * (PointB.X - PointA.X) - (PointA.X * PointB.Y - PointB.X * PointA.Y)) / (PointA.Y - PointB.Y))));
-                    WriteAt(kirpichik, y, ((int)Math.Round((double)(-y * (PointB.X - PointA.X) - (PointA.X * PointB.Y - PointB.X * PointA.Y)) / (PointA.Y - PointB.Y))));
+                return points;
 
             }
 
+            if (Math.Abs(PointA.X - PointB.X) >= Math.Abs(PointA.Y - PointB.Y))
+            {
+                //Старт от меньшего к большему X
+                for (int x = Math.Min(PointA.X, PointB.X); x <= Math.Max(PointA.X, PointB.X); x++)
+                {
+                    points[w] = new Point("", x, ((int)Math.Round((double)(-x * (PointA.Y - PointB.Y) - (PointA.X * PointB.Y - PointB.X * PointA.Y)) / (PointB.X - PointA.X))));
+                    w++;
+                }
+
+                return points;
+            }
+
+               //Старт от меньшего к большему Y
+            for (int y = Math.Min(PointA.Y, PointB.Y); y <= Math.Max(PointA.Y, PointB.Y); y++)
+            {
+                 points[w] = new Point("", ((int)Math.Round((double)(-y * (PointB.X - PointA.X) - (PointA.X * PointB.Y - PointB.X * PointA.Y)) / (PointA.Y - PointB.Y))),y);
+                w++;
+            }
+
+            return points;
 
 
 
 
 
-           
+
+
+
         }
     }
 }
