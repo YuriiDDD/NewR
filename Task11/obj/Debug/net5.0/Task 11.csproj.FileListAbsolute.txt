@@ -13,3 +13,4 @@ C:\Users\3213897\Source\Repos\NewR\Task11\obj\Debug\net5.0\Task 11.dll
 C:\Users\3213897\Source\Repos\NewR\Task11\obj\Debug\net5.0\ref\Task 11.dll
 C:\Users\3213897\Source\Repos\NewR\Task11\obj\Debug\net5.0\Task 11.pdb
 C:\Users\3213897\Source\Repos\NewR\Task11\obj\Debug\net5.0\Task 11.genruntimeconfig.cache
+C:\Users\3213897\Source\Repos\NewR\Task11\obj\Debug\net5.0\Task 11.csproj.AssemblyReference.cache

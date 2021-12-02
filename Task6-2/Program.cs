@@ -9,6 +9,8 @@ namespace Task6_2
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             Console.Write("Введите путь к каталогу: ");
             string Path = Console.ReadLine();
             Console.Write("Введите маску для файлов: ");
@@ -88,27 +90,51 @@ namespace Task6_2
                     ++CountOfMatchFiles;
                     Console.WriteLine("File " + f.Name + ":");
 
-                    // Открываем файл
-                    sr = new StreamReader(di.FullName + @"\" + f.Name,
-                        Encoding.Default);
-                    // Считываем целиком
-                    string Content = sr.ReadToEnd();
-                    // Закрываем файл
-                    sr.Close();
-                    // Ищем заданный текст
-                    mc = regText.Matches(Content);
-                    // Перебираем список вхождений
-                    foreach (Match m in mc)
-                    {
-                        Console.WriteLine("Текст найден в позиции {0}.", m.Index);
-                    }
 
-                    /******************************************************/
-                    /* Отладочная информация
-                    /******************************************************/
-                    if (mc.Count == 0)
+
+                    // Открываем файл
+                    try
                     {
-                        Console.WriteLine("В данном файле запрошенный текст не найден.");
+                        sr = new StreamReader(di.FullName + @"\" + f.Name,
+                            Encoding.Default);
+                        // Считываем целиком
+                        string Content = sr.ReadToEnd();
+                        // Закрываем файл
+                        sr.Close();
+
+
+
+                        // Ищем заданный текст
+                        mc = regText.Matches(Content);
+                        // Перебираем список вхождений
+                        foreach (Match m in mc)
+                        {
+                            Console.WriteLine("Текст найден в позиции {0}.", m.Index);
+                        }
+
+                        /******************************************************/
+                        /* Отладочная информация
+                        /******************************************************/
+                        if (mc.Count == 0)
+                        {
+                            Console.WriteLine("В данном файле запрошенный текст не найден.");
+                        }
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        Console.WriteLine("The file cannot be found.");
+                    }
+                    catch (IOException)
+                    {
+                        Console.WriteLine("An I/O error has occurred.");
+                    }
+                    catch (OutOfMemoryException)
+                    {
+                        Console.WriteLine("There is insufficient memory to read the file.");
+                    }
+                    finally
+                    {
+                        sr?.Dispose();
                     }
                 }
             }
