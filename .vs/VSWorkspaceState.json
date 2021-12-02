@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ConsoleApp2",
+    "\\Employee",
+    "\\FigureIerarhy",
+    "\\Task7"
   ],
-  "SelectedNode": "\\ConsoleApp2.sln",
+  "SelectedNode": "\\FigureIerarhy\\FigureIerarhy.csproj",
   "PreviewInSolutionExplorer": false
 }
