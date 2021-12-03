@@ -32,18 +32,18 @@ namespace Employee
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             //Adding employees
-            Company MyCompany = new Company();
-            Employee rabotnik1 = new Employee("Sergey", "Petrov", 5, RankType.Worker);
+            Company MyCompany = new();
+            Employee rabotnik1 = new ("Sergey", "Petrov", 5, RankType.Worker);
             MyCompany += rabotnik1;
-            rabotnik1 = new Employee("Andrey", "Ivanov", 13, RankType.Director);
+            rabotnik1 = new ("Andrey", "Ivanov", 13, RankType.Director);
             MyCompany += rabotnik1;
-            rabotnik1 = new Employee("Ivan", "Dolgiy", 7, RankType.Foreman);
+            rabotnik1 = new ("Ivan", "Dolgiy", 7, RankType.Foreman);
             MyCompany += rabotnik1;
-            rabotnik1 = new Employee("Petr", "Khmelevskiy", 4, RankType.Manager);
+            rabotnik1 = new ("Petr", "Khmelevskiy", 4, RankType.Manager);
             MyCompany += rabotnik1;
-            rabotnik1 = new Employee("Konstantin", "Pavlenko", 9, RankType.Worker);
+            rabotnik1 = new ("Konstantin", "Pavlenko", 9, RankType.Worker);
             MyCompany += rabotnik1;
-            rabotnik1 = new Employee("Maxim", "Vasiuta", 2, RankType.Worker);
+            rabotnik1 = new ("Maxim", "Vasiuta", 2, RankType.Worker);
             MyCompany += rabotnik1;
 
            //

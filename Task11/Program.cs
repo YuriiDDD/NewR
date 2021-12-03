@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Task11
@@ -6,57 +7,43 @@ namespace Task11
     class Program
     {
 
+        
+
+       
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+                        // создаем новый поток
+            Thread myThread = new Thread(new ThreadStart(Count));
+           
 
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 9; i++)
             {
-                Reader reader = new Reader(i);
+                Console.WriteLine("Главный поток:");
+                Console.WriteLine(i * i);
+                if (i * i > 20)
+                {
+                    if (!myThread.IsAlive) myThread.Start(); // запускаем поток
+                }
+
+                Thread.Sleep(300);
             }
-
-            Console.ReadLine();
-
 
             Console.ReadLine();
            
         }
 
-        class Reader
+        public static void Count()
         {
-            // создаем семафор
-            static Semaphore sem = new Semaphore(3, 3);
-            Thread myThread;
-            int count = 3;// счетчик чтения
-
-            public Reader(int i)
+            for (int i = 1; i < 9; i++)
             {
-                myThread = new Thread(Read);
-                myThread.Name = $"Читатель {i.ToString()}";
-                myThread.Start();
+                Console.WriteLine("Второй поток:");
+                Console.WriteLine(i * i);
+                Thread.Sleep(400);
             }
-
-            public void Read()
-            {
-                while (count > 0)
-                {
-                    sem.WaitOne();
-
-                    Console.WriteLine($"{Thread.CurrentThread.Name} входит в библиотеку");
-
-                    Console.WriteLine($"{Thread.CurrentThread.Name} читает");
-                    Thread.Sleep(1000);
-
-                    Console.WriteLine($"{Thread.CurrentThread.Name} покидает библиотеку");
-
-                    sem.Release();
-
-                    count--;
-                    Thread.Sleep(1000);
-                }
-            }
+            Console.WriteLine("Второй поток завершил работу:");
         }
 
+       
 
     }
 }

@@ -14,13 +14,13 @@ namespace FigureIerarhy
 
         private Point[] points;
 
-        private bool isVertical()
+        private bool IsVertical()
         { 
            bool result = false;
             if ( PointA.Y == PointB.Y) return true; ;
             return result;
         }
-        private bool isGorisontal()
+        private bool IsGorisontal()
         {
             bool result = false;
             if (PointA.X == PointB.X) return true;
@@ -28,7 +28,7 @@ namespace FigureIerarhy
         }
 
         public Line(Point pointA, Point  pointB, string name)
-          => (PointA, PointB,Name) = (pointA, pointB, name = pointA.DotName + pointB.DotName);
+          => (PointA, PointB,Name) = (pointA, pointB, pointA.DotName + pointB.DotName);
 
         public void Draw(string e)
         {
@@ -51,7 +51,7 @@ namespace FigureIerarhy
             int w = 0;
 
             
-            if (isGorisontal())
+            if (IsGorisontal())
             {
                 for (int y = Math.Min(PointA.Y, PointB.Y); y <= Math.Max(PointA.Y, PointB.Y); y++)
                 {
@@ -60,7 +60,7 @@ namespace FigureIerarhy
                 }
                 return points;
             }
-            if (isVertical())
+            if (IsVertical())
             {
                 for (int x = Math.Min(PointA.X, PointB.X); x <= Math.Max(PointA.X, PointB.X); x++)
                 {
