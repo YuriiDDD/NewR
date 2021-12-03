@@ -5,7 +5,6 @@ C:\Users\3213897\Source\Repos\NewR\Task6-2\bin\Debug\net5.0\Task 6-2.runtimeconf
 C:\Users\3213897\Source\Repos\NewR\Task6-2\bin\Debug\net5.0\Task 6-2.dll
 C:\Users\3213897\Source\Repos\NewR\Task6-2\bin\Debug\net5.0\ref\Task 6-2.dll
 C:\Users\3213897\Source\Repos\NewR\Task6-2\bin\Debug\net5.0\Task 6-2.pdb
-C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.csproj.AssemblyReference.cache
 C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.AssemblyInfoInputs.cache
 C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.AssemblyInfo.cs
@@ -14,3 +13,4 @@ C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.dll
 C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\ref\Task 6-2.dll
 C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.pdb
 C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.genruntimeconfig.cache
+C:\Users\3213897\Source\Repos\NewR\Task6-2\obj\Debug\net5.0\Task 6-2.csproj.AssemblyReference.cache

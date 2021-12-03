@@ -24,7 +24,7 @@ namespace Task6_2
             if (Path[Path.Length - 1] != '\\') Path += '\\';
 
             // Создание объекта на основе введенного пути
-            DirectoryInfo di = new DirectoryInfo(Path);
+            DirectoryInfo di = new (Path);
             // Если путь не существует
             if (!di.Exists)
             {

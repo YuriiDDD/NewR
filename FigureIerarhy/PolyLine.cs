@@ -36,9 +36,9 @@ namespace FigureIerarhy
         {
             for (int i = 0; i <= Points.Length - 2; i++)
             {
-                lines[i] = new Line (Points[i],Points[i+1],"");
+                lines[i] = new Line (Points[i],Points[i+1], string.Empty);
             }
-            lines[Points.Length-1] = new Line(Points[0], Points[Points.Length - 1], "");
+            lines[Points.Length-1] = new Line(Points[0], Points[Points.Length - 1], string.Empty);
                 return lines;
         }
         public void Draw()
