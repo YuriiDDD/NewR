@@ -8,8 +8,8 @@ namespace Task11_new
 {
     public class SearchInfoForThread
     {
-        public string Path;
-        public string Mask;
+        public string Path { get; set; }
+        public string Mask { get; set; }
 
     }
 

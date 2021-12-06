@@ -11,7 +11,7 @@ namespace Task11_new
     class FileSearch
     {
 
-        public static string[] FileSearchByMask (string Path, string Mask)
+        public static void FileSearchByMask (string Path, string Mask)
         {
            
             //Список всех файлов с искомой маской
@@ -25,21 +25,21 @@ namespace Task11_new
             }
             catch
             {
-                return Files;
+               
 
             }
 
-
-            return Files;
+            Console.WriteLine("Search parameters: " + Path + Mask);
+            PrintFiles(Files);
 
 
         }
         public static void FileSearchByMask(object x)
         {
             Console.WriteLine(Thread.CurrentThread.Name);
-
+            
             SearchInfoForThread Info = (SearchInfoForThread) x;
-
+            Console.WriteLine(Info.Mask);
             string[] Files = null;
 
             try
@@ -63,9 +63,15 @@ namespace Task11_new
 
         public static void PrintFiles(string[] Files)
         {
-            foreach (string f in Files)
-                Console.WriteLine(f);
-        
+            if (Files.Length > 0)
+            {
+                foreach (string f in Files)
+                    Console.WriteLine(f);
+            }
+            else
+            {
+                Console.WriteLine("Nothing found");
+            }
         
         }
 

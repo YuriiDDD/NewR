@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Task11_new
@@ -31,25 +32,38 @@ namespace Task11_new
         }
         static void Main(string[] args)
         {
-            Mask.Init();
-            Path.Init();
+           
 
-            SearchInfoForThread MyInfo = new SearchInfoForThread();
-            int i = 0;
-            foreach (string mask in Mask.Masks)
+            List<string> masks = new();
+            List<string> paths = new();
+            masks.Add("*.txt");
+            masks.Add("*.doc");
+            masks.Add("*.docx");
+            paths.Add(@"C:\Users\3213897\OneDrive - Jabil");
+
+            
+
+            
+
+            foreach (string mask in masks)
             {
-                MyInfo.Mask = mask;
-                MyInfo.Path = Path.Paths[0];
-                Thread myThread = new Thread(new ParameterizedThreadStart (FileSearch.FileSearchByMask));
-                myThread.Name = "Thread " + i.ToString();
-                myThread.Start(MyInfo);
-                i++;
-
+                try
+                {
+                
+                    Thread myThread = new Thread(() => FileSearch.FileSearchByMask(paths[0],mask));                            
+                    myThread.Start();
+                    
+                }
+                catch
+                {
+                    Console.WriteLine("Error");
+                }
+      
             }
-            
-            
-            
-           // FileSearch.FileSearchByMask(Path.Paths[0].ToString(), Mask.Masks[0].ToString());
+
+
+
+           
 
 
 
